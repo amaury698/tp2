@@ -34,7 +34,7 @@ jobs:
 
 # Note: tags has to be all lower-case
           tags: ${{secrets.DOKERHUB_USERNAME}}/tp-devops-epf:simple-api
-          push: ${{ github.ref == 'refs/heads/main }}
+          push: ${{ github.ref == 'refs/heads/master }}
       - name: Build image and push database
 
         uses: docker/build-push-action@v2
@@ -45,7 +45,7 @@ jobs:
 
 # Note: tags has to be all lower-case
           tags: ${{secrets.DOKERHUB_USERNAME}}/tp-devops-epf:database
-          push: ${{ github.ref == 'refs/heads/main }}
+          push: ${{ github.ref == 'refs/heads/master }}
       - name: Build image and push httpd
         uses: docker/build-push-action@v2
         with:
@@ -55,7 +55,7 @@ jobs:
 
 # Note: tags has to be all lower-case
           tags: ${{secrets.DOKERHUB_USERNAME}}/tp-devops-epf:httpd
-          push: ${{ github.ref == 'refs/heads/main }}
+          push: ${{ github.ref == 'refs/heads/master }}
 
 
       - name: Login to DockerHub
